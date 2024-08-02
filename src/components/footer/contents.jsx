@@ -1,9 +1,24 @@
 import FooterTail from "./footer-tail";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
+const menuList = [
+  {
+    label: "Home",
+    link: "/",
+  },
+  {
+    label: "Blog",
+    link: "/blog",
+  },
+  {
+    label: "Contact",
+    link: "/contact",
+  },
+];
 
 const Contact = () => (
-  <div className="bg-[#E8E8EA] h-[495px] py-16 px-4 sm:px-16">
-    <div className="flex flex-col sm:flex-row justify-between">
+  <div className="bg-[#E8E8EA] h-[495px] py-16 sm:px-16">
+    <div className="flex flex-col sm:flex-row justify-between px-[352px] sm:px-16">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl font-bold">About</h1>
@@ -20,9 +35,9 @@ const Contact = () => (
       </div>
       <div className="px-[120px] sm:px-[229.5px]">
         <ul className="flex flex-col gap-4 text-[#696A75] font-thin mt-2">
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Contact</li>
+          {menuList.map((menu) => (
+            <Link href={menu.link}>{menu.label}</Link>
+          ))}
         </ul>
       </div>
       <div className="flex gap-[26.67px] pr-[120px] sm:pr-[221px]">

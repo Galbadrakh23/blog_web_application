@@ -7,6 +7,11 @@ export const content = [
 ];
 export const theme = {
   extend: {
+    fontFamily: {
+      "work-sans": ['"Work Sans"', "sans-serif"],
+      "serif-4": ['"Source Serif 4", "serif"'],
+    },
+
     backgroundImage: {
       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       "gradient-conic":
