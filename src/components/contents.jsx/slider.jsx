@@ -13,12 +13,12 @@ const Slider = () => {
   };
 
   return (
-    <div className="mx-auto mt-[100px] w-[1216px] h-[651px] border border-gray-300 rounded-xl relative">
+    <div className="mx-auto mt-[100px] relative">
       <img
         id="SliderImage"
         src={sliderImage}
         alt=""
-        className="object-contain mx-auto"
+        className="object-fill m-auto w-[1216px] h-[600px]"
       />
       <div className="absolute top-[335px] left-[10px] w-[598px] h-[252px] bg-[#FFFFFF] rounded-lg">
         <div className="flex flex-col gap-4 p-10">

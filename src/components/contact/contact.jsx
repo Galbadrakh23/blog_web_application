@@ -4,7 +4,7 @@ const ContactContent = () => {
   return (
     <section className="mx-auto w-[1216px] px-4 py-8 border flex">
       <h2 className="text-2xl font-bold mb-6 font-work-sans leading-7"></h2>
-      <div className="mx-auto border border-black">
+      <div className="mx-auto border border-gray-500 rounded-lg">
         <div className="mx-auto flex flex-col gap-4 px-[72.5px]">
           <div className="mx-auto flex flex-col gap-4 w-[624px] pt-4">
             <h1 className="text-3xl font-semibold w-48 h-10 pl-6">
@@ -75,7 +75,7 @@ const ContactContent = () => {
                   id=""
                   className="h-6 rounded-md border border-gray-200"
                 />{" "}
-                <input
+                <textarea
                   type="text"
                   name=""
                   id=""

@@ -18,7 +18,7 @@ const menuList = [
 
 const Content = () => (
   <div className="flex items-center py-4">
-    <div className="flex items-center px-4 sm:px-[350px] mx-auto">
+    <div className="flex items-center px-4 mx-auto">
       <div className="flex gap-2 items-center pr-[118px]">
         <img width={36} src="/image/Logo.svg" alt="" />
         <p className="font-medium">
