@@ -17,7 +17,7 @@ const menuList = [
 ];
 
 const Contact = () => (
-  <div className="bg-[#E8E8EA] h-[495px] py-16 sm:px-16">
+  <div className="bg-[#E8E8EA] h-[495px] mx-auto w-[1216px] px-4 py-8">
     <div className="flex flex-col sm:flex-row justify-between px-[352px] sm:px-16">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">

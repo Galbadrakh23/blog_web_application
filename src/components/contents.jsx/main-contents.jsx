@@ -1,4 +1,4 @@
-import BlogPosts from "./favorite-slider";
+import HomePosts from "./favorite-slider";
 import Slider from "./slider";
 import TrendSection from "./trend-section";
 
@@ -7,7 +7,7 @@ const MainContents = () => {
     <div className="w-full h-full flex flex-col justify-center items-center">
       <Slider />
       <TrendSection />
-      <BlogPosts />
+      <HomePosts />
     </div>
   );
 };

@@ -26,3 +26,10 @@
 * {
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: "SerifPro"; /* Name of your custom font */
+  src: url("/fonts/source-serif-pro.regular.ttf") format("truetype"); /* Path to the font */
+  font-weight: normal; /* Specify the font weight */
+  font-style: normal; /* Specify the font style */
+}

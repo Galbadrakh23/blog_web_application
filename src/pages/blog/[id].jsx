@@ -39,7 +39,7 @@ const ArticleDetail = () => {
             alt={articleDetail?.title}
           />
           <div
-            className="blog-detail font-work-sans font-normal text-base leading-7 mb-8"
+            className="blog-detail font-serif-4 text-base leading-7 mb-8"
             dangerouslySetInnerHTML={{ __html: articleDetail?.body_html }}
           />
         </div>

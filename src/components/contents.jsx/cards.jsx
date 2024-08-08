@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 
 const Cards = () => {
   const [articles, setArticles] = useState([]);
+  const [count, setCount] = useState(9);
 
   const getArticlesData = async () => {
     const response = await fetch(
-      "https://dev.to/api/articles/?pages=1&per_page=9"
+      `https://dev.to/api/articles/?pages=1&per_page=${count}`
     );
     const data = await response.json();
     setArticles(data);
@@ -14,7 +15,7 @@ const Cards = () => {
 
   useEffect(() => {
     getArticlesData();
-  }, []);
+  }, [articles]);
   console.log("Articles Data", articles);
 
   return (
@@ -29,7 +30,7 @@ const Cards = () => {
               <img
                 src={article.cover_image}
                 alt={article.title}
-                className="w-[360px] h-60 object-cover rounded-xl border border-gray-200 mx-auto"
+                className="w-[360px] h-60 object-cover rounded-xl border border-gray-200 mx-auto mt-2"
               />
               <button className="text-[#4B6BFB] text-sm mb-2 w-150 font-work-sans rounded-md   mt-8 bg-[#4B6BFB0D] border-2 ml-6 px-4 py-1">
                 Description
@@ -43,6 +44,14 @@ const Cards = () => {
             </div>
           </Link>
         ))}
+      </div>
+      <div className="mx-auto mt-8 flex justify-center">
+        <button
+          onClick={() => setCount(count + 3)}
+          className="bg-transparent border border-gray-300 text-gray-500 hover:bg-gray-300 hover:text-white py-2 px-4 rounded"
+        >
+          Load More
+        </button>
       </div>
     </>
   );
