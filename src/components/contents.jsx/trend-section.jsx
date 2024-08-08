@@ -5,7 +5,7 @@ const TrendSection = () => {
 
   const getArticlesData = async () => {
     const response = await fetch(
-      "https://dev.to/api/articles/latest?pages=1&per_page=4"
+      "https://dev.to/api/articles?pages=1&per_page=4"
     );
     const data = await response.json();
     setArticles(data);

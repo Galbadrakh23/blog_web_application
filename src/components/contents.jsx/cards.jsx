@@ -6,7 +6,7 @@ const Cards = () => {
 
   const getArticlesData = async () => {
     const response = await fetch(
-      "https://dev.to/api/articles/latest?pages=1&per_page=9"
+      "https://dev.to/api/articles/?pages=1&per_page=9"
     );
     const data = await response.json();
     setArticles(data);
@@ -24,19 +24,19 @@ const Cards = () => {
           <Link href={"/blog/" + article.id}>
             <div
               key={article.id}
-              className=" bg-[#F2F2F2] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-110"
+              className=" bg-[#F2F2F2] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-110 h-[476px]"
             >
               <img
                 src={article.cover_image}
                 alt={article.title}
                 className="w-[360px] h-60 object-cover rounded-xl border border-gray-200 mx-auto"
               />
-              <div className="p-4 mx-2 my-2 rounded-xl flex flex-col">
-                <button className="text-blue-500 text-sm mb-2 w-150 px-4 py-2 rounded-xl">
-                  {article.category}
-                </button>
+              <button className="text-[#4B6BFB] text-sm mb-2 w-150 font-work-sans rounded-md   mt-8 bg-[#4B6BFB0D] border-2 ml-6 px-4 py-1">
+                Description
+              </button>
+              <div className="px-4  mx-2 my-2 rounded-xl flex flex-col">
                 <h2 className="text-2xl font-semibold">{article.title}</h2>
-                <div className="absolute text-[#97989F] text-sm font-work-sans">
+                <div className=" text-[#97989F] text-sm font-work-sans py-4">
                   {article.readable_publish_date}
                 </div>
               </div>
