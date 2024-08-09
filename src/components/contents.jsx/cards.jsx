@@ -7,7 +7,7 @@ const Cards = () => {
 
   const getArticlesData = async () => {
     const response = await fetch(
-      `https://dev.to/api/articles/?pages=1&per_page=${count}`
+      `https://dev.to/api/articles/latest?pages=1&per_page=${count}`
     );
     const data = await response.json();
     setArticles(data);
@@ -15,7 +15,7 @@ const Cards = () => {
 
   useEffect(() => {
     getArticlesData();
-  }, [articles]);
+  }, [count]);
   console.log("Articles Data", articles);
 
   return (

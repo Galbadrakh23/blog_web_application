@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 import { useRouter } from "next/router";
 
@@ -19,6 +20,16 @@ const ArticleDetail = () => {
 
   return (
     <div>
+      <motion.div
+        className="box"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      />
       <div className="max-w-2xl mx-auto">
         <div className="flex flex-col gap-4 mt-[100px]">
           <h1 className="text-2xl font-bold">{articleDetail?.title}</h1>
@@ -28,13 +39,15 @@ const ArticleDetail = () => {
               className="w-8 h-8 rounded-full"
               alt=""
             />
-            <span>{articleDetail?.user?.name}</span>
+            <span className="text-md font-work-sans capitalize">
+              {articleDetail?.user?.name}
+            </span>
             <span className="text-gray-500">
               {articleDetail?.readable_publish_date}
             </span>
           </div>
           <img
-            className="w-full rounded-lg"
+            className="w-full rounded-xl border"
             src={articleDetail?.cover_image}
             alt={articleDetail?.title}
           />

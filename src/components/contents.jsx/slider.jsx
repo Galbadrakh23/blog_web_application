@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 const Slider = () => {
-  const [sliderImage, setSliderImage] = useState("/image/Slider.svg");
+  const [sliderImage, setSliderImage] = useState("/image/Slider2.jpg");
 
   const handleSliderRight = () => {
     setSliderImage("/image/Slider2.jpg");
@@ -13,14 +13,14 @@ const Slider = () => {
   };
 
   return (
-    <div className="mx-auto mt-[100px] relative">
+    <div className="mx-auto mt-[100px] relative ">
       <img
         id="SliderImage"
         src={sliderImage}
         alt=""
-        className="object-fill m-auto w-[1216px] h-[600px]"
+        className="object-cover m-auto w-[1216px] h-[600px] rounded-3xl"
       />
-      <div className="absolute top-[335px] left-[10px] w-[598px] h-[252px] bg-[#FFFFFF] rounded-lg">
+      <div className="absolute top-[335px] left-[10px] w-[598px] h-[252px] bg-[#FFFFFF] rounded-2xl">
         <div className="flex flex-col gap-4 p-10">
           <span className="text-white bg-[#4B6BFB] w-[97px] flex justify-center px-4 py-1 rounded-xl hover:bg-transparent">
             Technology

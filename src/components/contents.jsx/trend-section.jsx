@@ -26,19 +26,21 @@ const TrendSection = () => {
           {articles.map((article, index) => (
             <div
               key={index}
-              className="relative rounded-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+              className="relative rounded-lg hover:shadow-xl transition-all duration-300 hover:scale-110
+              h-80
+              "
             >
               <img
                 src={article.cover_image}
                 alt={article.title}
-                className="h-auto object-fill rounded-lg"
+                className="h-80 object-cover rounded-lg"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 rounded-xl flex items-end">
-                <div className="text-left p-4">
-                  <span className="bg-[#4B6BFB] text-white px-4 py-2 rounded-lg hover:bg-transparent">
+                <div className="text-left p-4 flex flex-col items-start gap-4">
+                  <span className="bg-[#FFFFFF] text-[#4B6BFB] px-4 py-2 rounded-lg hover:bg-transparent">
                     Technology
                   </span>
-                  <h3 className="mt-2 ml-1 text-white text-md font-thin">
+                  <h3 className="p-2 mt-2 ml-1 text-[#FFFFFF] text-lg font-work-sans font-semibold h-20 backdrop-blur-sm	rounded-xl">
                     {article.title}
                   </h3>
                 </div>

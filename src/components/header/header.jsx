@@ -1,5 +1,5 @@
 import Content from "./contents";
-const Header = () => {
-  return <Content />;
+const Header = ({ searchText }) => {
+  return <Content searchText={searchText} />;
 };
 export default Header;
