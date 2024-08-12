@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { SearchContext } from "../provider/search-provider";
 
 const Cards = () => {
+  const { searchValue } = useContext(SearchContext);
   const [articles, setArticles] = useState([]);
   const [count, setCount] = useState(9);
 
@@ -20,6 +22,8 @@ const Cards = () => {
 
   return (
     <>
+      <h2 className="text-center pb-8">Хайлт: {searchValue}</h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {articles.map((article) => (
           <Link href={"/blog/" + article.id}>

@@ -1,4 +1,4 @@
-const SearchInput = ({ searchText }) => {
+const SearchInput = ({ handleChange }) => {
   return (
     <div>
       <div class="relative">
@@ -7,7 +7,7 @@ const SearchInput = ({ searchText }) => {
           id="username"
           type="text"
           placeholder="Search..."
-          value={searchText}
+          onChange={handleChange}
         />
         <div class="absolute right-0 inset-y-0 flex items-center pr-4">
           <svg

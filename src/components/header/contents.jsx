@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import SearchInput from "./search-input";
-import { useState } from "react";
-
+import { SearchContext } from "../provider/search-provider";
 const menuList = [
   {
     label: "Home",
@@ -17,9 +16,10 @@ const menuList = [
     link: "/contact",
   },
 ];
-const Content = ({ searchText }) => {
-  const handleChange = (text) => {
-    setSearchValue(text);
+const Content = () => {
+  const { setSearchValue } = useContext(SearchContext);
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
   };
 
   return (
@@ -38,7 +38,7 @@ const Content = ({ searchText }) => {
             ))}
           </ul>
         </div>
-        <SearchInput searchText={searchText} />
+        <SearchInput handleChange={handleChange} />
       </div>
     </div>
   );
