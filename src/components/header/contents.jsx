@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import SearchInput from "./search-input";
-import { SearchContext } from "../provider/search-provider";
+import { MyContext, SearchContext } from "../provider/provider";
 const menuList = [
   {
     label: "Home",
@@ -17,7 +17,7 @@ const menuList = [
   },
 ];
 const Content = () => {
-  const { setSearchValue } = useContext(SearchContext);
+  const { setSearchValue } = useContext(MyContext);
   const handleChange = (e) => {
     setSearchValue(e.target.value);
   };

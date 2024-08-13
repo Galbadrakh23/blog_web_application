@@ -1,40 +1,27 @@
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
-import { SearchContext } from "../provider/search-provider";
+import { useContext } from "react";
+import { MyContext } from "../provider/provider";
 
 const Cards = () => {
-  const { searchValue } = useContext(SearchContext);
-  const [articles, setArticles] = useState([]);
-  const [count, setCount] = useState(9);
+  const { searchValue, articles, count, setCount } = useContext(MyContext);
 
-  const getArticlesData = async () => {
-    const response = await fetch(
-      `https://dev.to/api/articles/latest?pages=1&per_page=${count}`
-    );
-    const data = await response.json();
-    setArticles(data);
-  };
-
-  useEffect(() => {
-    getArticlesData();
-  }, [count]);
-  console.log("Articles Data", articles);
+  const findArticles = articles.filter((article) =>
+    article.title.includes(searchValue)
+  );
 
   return (
     <>
-      <h2 className="text-center pb-8">Хайлт: {searchValue}</h2>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-        {articles.map((article) => (
+        {findArticles.map((article) => (
           <Link href={"/blog/" + article.id}>
             <div
               key={article.id}
               className=" bg-[#F2F2F2] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-110 h-[476px]"
             >
               <img
-                src={article.cover_image}
+                src={article.social_image}
                 alt={article.title}
-                className="w-[360px] h-60 object-cover rounded-xl border border-gray-200 mx-auto mt-2"
+                className="w-[360px] h-60 object-contain rounded-xl border border-gray-200 mx-auto mt-2"
               />
               <button className="text-[#4B6BFB] text-sm mb-2 w-150 font-work-sans rounded-md   mt-8 bg-[#4B6BFB0D] border-2 ml-6 px-4 py-1">
                 Description
