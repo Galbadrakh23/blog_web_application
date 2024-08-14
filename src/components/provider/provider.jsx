@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 import { toast } from "react-toastify";
 
 export const MyContext = createContext("null");
@@ -16,7 +16,18 @@ const MyProvider = ({ children }) => {
         `https://dev.to/api/articles/latest?pages=1&per_page=${count}`
       );
       const data = await response.json();
-      setArticles(data);
+
+      setArticles((prevArticles) => {
+        console.log("prevArticles", prevArticles);
+        const newArticles = data.filter(
+          (articles) =>
+            !prevArticles.some(
+              (prevArticles) => prevArticles.id === articles.id
+            )
+        );
+        return [...prevArticles, ...newArticles];
+      });
+      setIsLoading(false);
     } catch (error) {
       console.log("Error", error);
       setIsLoading(false);
@@ -30,11 +41,22 @@ const MyProvider = ({ children }) => {
 
   return (
     <MyContext.Provider
-      value={{ searchValue, setSearchValue, articles, count, setCount }}
+      value={{
+        searchValue,
+        setSearchValue,
+        articles,
+        count,
+        setCount,
+        isLoading,
+      }}
     >
       {children}
     </MyContext.Provider>
   );
+};
+
+export const useMyContext = () => {
+  return useContext(MyContext);
 };
 
 export default MyProvider;
