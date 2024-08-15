@@ -4,7 +4,7 @@ const ContactContent = () => {
   return (
     <section className="mx-auto w-[1216px] px-4 py-8 border flex">
       <h2 className="text-2xl font-bold mb-6 font-work-sans leading-7"></h2>
-      <div className="mx-auto border border-gray-500 rounded-lg">
+      <div className="mx-auto border rounded-lg">
         <div className="mx-auto flex flex-col gap-4 px-[72.5px]">
           <div className="mx-auto flex flex-col gap-4 w-[624px] pt-4">
             <h1 className="text-3xl font-semibold w-48 h-10 pl-6">
@@ -48,7 +48,7 @@ const ContactContent = () => {
           id="info"
           className="mx-auto w-[643px] h-[440px] border rounded-xl bg-[#F6F6F7] relative"
         >
-          <div className="flex flex-col gap-4 mt-[29px] ml-[35px] border border-yellow-300">
+          <div className="flex flex-col gap-4 mt-[29px] ml-[35px]">
             <p>Leave a message</p>
             <form action="" className="w-[478px] h-[335px] flex flex-col gap-4">
               <div className="flex flex-row gap-4">
