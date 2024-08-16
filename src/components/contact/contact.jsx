@@ -48,7 +48,7 @@ const ContactContent = () => {
           id="info"
           className="mx-auto w-[643px] h-[440px] border rounded-xl bg-[#F6F6F7] relative"
         >
-          <div className="flex flex-col gap-4 mt-[29px] ml-[35px]">
+          <div className="flex flex-col gap-4 mt-[29px] ml-[35px] overflow-hidden">
             <p>Leave a message</p>
             <form action="" className="w-[478px] h-[335px] flex flex-col gap-4">
               <div className="flex flex-row gap-4">
@@ -80,7 +80,7 @@ const ContactContent = () => {
                   name=""
                   id=""
                   placeholder="Write a message"
-                  className="h-40 rounded-md border border-gray-200"
+                  className="h-40 rounded-md border border-gray-200 overflow-hidden"
                 />
               </div>
               <button className="bg-[#4B6BFB] w-[130px] border rounded-md text-[#ffffff] py-2">
