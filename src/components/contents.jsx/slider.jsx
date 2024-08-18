@@ -9,21 +9,28 @@ const Slider = () => {
 
   const getArticlesData = async () => {
     const response = await fetch(
-      "https://dev.to/api/articles/?pages=1&per_page=10"
+      "https://dev.to/api/articles/?pages=1&per_page=4"
     );
     const data = await response.json();
     setArticles(data);
   };
 
-  console.log("====>", articles);
-
   useEffect(() => {
     getArticlesData();
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === articles.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [articles]);
+
   return (
-    <section className="">
-      <div className="w-[1200px] h-[600px] rounded-xl mt-[25px] p-2 overflow-hidden">
+    <section className="animate-carousel">
+      <div className="w-[1216px] rounded-lg mt-8 overflow-hidden">
         <Carousel slides={articles} currentIndex={currentIndex} />
       </div>
       <div className="flex flex-row-reverse gap-2 mt-2 mr-4">

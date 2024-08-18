@@ -17,11 +17,11 @@ const TrendSection = () => {
 
   console.log("Articles Data", articles);
   return (
-    <section className="py-8">
+    <section className="py-8 bg-gradient-to-b from-[#cfd9df] to-[#e2ebf0] bg-opacity-80 rounded-2xl mt-8">
       <h2 className="text-2xl font-bold mb-6 font-work-sans leading-7">
         Trending
       </h2>
-      <div className="mx-auto w-[1216px]">
+      <div className="mx-auto w-[1216px] p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
           {articles.map((article, index) => (
             <div
@@ -31,11 +31,11 @@ const TrendSection = () => {
               "
             >
               <img
-                src={article.cover_image}
+                src={article.social_image}
                 alt={article.title}
                 className="h-80 object-cover rounded-lg"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 rounded-xl flex items-end">
+              <div className="absolute inset-0 bg-[#000000] bg-opacity-20 rounded-xl flex items-end">
                 <div className="text-left p-4 flex flex-col items-start gap-4">
                   <span className="bg-[#FFFFFF] text-[#4B6BFB] px-4 py-2 rounded-lg hover:bg-transparent">
                     {article.tags}
